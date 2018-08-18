@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('BlurAdmin', [
+angular.module('InnSuites', [
   'ngAnimate',
   'ui.bootstrap',
   'ui.sortable',
@@ -13,6 +13,6 @@ angular.module('BlurAdmin', [
   'ngJsTree',
   'angular-progress-button-styles',
 
-  'BlurAdmin.theme',
-  'BlurAdmin.pages'
+  'InnSuites.theme',
+  'InnSuites.pages'
 ]);

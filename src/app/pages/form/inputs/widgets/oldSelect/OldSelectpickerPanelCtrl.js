@@ -6,7 +6,7 @@
 (function () {
   'use strict';
 
-  angular.module('BlurAdmin.pages.form')
+  angular.module('InnSuites.pages.form')
       .controller('OldSelectpickerPanelCtrl', OldSelectpickerPanelCtrl);
 
   /** @ngInject */

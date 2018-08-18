@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  angular.module('BlurAdmin.theme')
+  angular.module('InnSuites.theme')
       .directive('scrollPosition', scrollPosition);
 
   /** @ngInject */

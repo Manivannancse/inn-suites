@@ -5,11 +5,11 @@
 (function () {
   'use strict';
 
-  angular.module('InnSuites.pages.components.admin')
-      .controller('adminCtrl', adminCtrl);
+  angular.module('InnSuites.pages.components.roles')
+      .controller('rolesCtrl', rolesCtrl);
 
   /** @ngInject */
-  function adminCtrl($scope, $filter, editableOptions, editableThemes, toastr) {
+  function rolesCtrl($scope, $filter, editableOptions, editableThemes, $uibModal, baProgressModal, toastr) {
     $scope.smartTablePageSize = 10;
 
     $scope.users = [
@@ -19,7 +19,10 @@
         "status": 4,
         "group": 3,
         "password":"*******",
-        "active":"Active"
+        "active":"Active",
+        "canRead":true,
+        "canWrite":true,
+        "canDelete":true
       },
       {
         "id": 2,
@@ -27,7 +30,10 @@
         "status": 3,
         "group": 1,
         "password":"*******",
-        "active":"Active"
+        "active":"Active",
+        "canRead":true,
+        "canWrite":true,
+        "canDelete":true
       },
       {
         "id": 3,
@@ -35,14 +41,20 @@
         "status": 3,
         "group": 2,
         "password":"*******",
-        "active":"Active"
+        "active":"Active",
+        "canRead":true,
+        "canWrite":true,
+        "canDelete":true
       },
       {
         "id": 4,
         "name": "Buckley Hopkins",
         "group": 4,
         "password":"*******",
-        "active":"Active"
+        "active":"Active",
+        "canRead":true,
+        "canWrite":true,
+        "canDelete":true
       },
       {
         "id": 5,
@@ -50,7 +62,10 @@
         "status": 1,
         "group": 1,
         "password":"*******",
-        "active":"Active"
+        "active":"Active",
+        "canRead":true,
+        "canWrite":true,
+        "canDelete":true
       },
       {
         "id": 6,
@@ -58,7 +73,10 @@
         "status": 4,
         "group": 2,
         "password":"*******",
-        "active":"Active"
+        "active":"Active",
+        "canRead":true,
+        "canWrite":true,
+        "canDelete":true
       },
       {
         "id": 7,
@@ -66,7 +84,10 @@
         "status": 4,
         "group": 1,
         "password":"*******",
-        "active":"Active"
+        "active":"Active",
+        "canRead":true,
+        "canWrite":true,
+        "canDelete":true
       },
       {
         "id": 8,
@@ -74,7 +95,10 @@
         "status": 4,
         "group": 2,
         "password":"*******",
-        "active":"Active"
+        "active":"Active",
+        "canRead":true,
+        "canWrite":true,
+        "canDelete":true
       },
       {
         "id": 9,
@@ -82,7 +106,10 @@
         "status": 1,
         "group": 2,
         "password":"*******",
-        "active":"Active"
+        "active":"Active",
+        "canRead":true,
+        "canWrite":true,
+        "canDelete":true
       },
       {
         "id": 10,
@@ -90,7 +117,10 @@
         "status": 1,
         "group": 3,
         "password":"*******",
-        "active":"Active"
+        "active":"Active",
+        "canRead":true,
+        "canWrite":true,
+        "canDelete":true
       }
     ];
 
@@ -127,21 +157,19 @@
       $scope.users.splice(index, 1);
       toastr.error("Record deleted Succefully!", 'success');
     };
-    
-    $scope.dataSaved = function(){
+
+    $scope.addUser = function(user) {
+      $scope.user = (typeof user == "undefined")? {} : user;
+      $uibModal.open({
+        animation: true,
+        templateUrl: 'app/pages/components/roles/newRole.html',
+        size: "md",
+        scope:$scope
+      });
+    };
+    $scope.hideModal = function(){
       toastr.success('Your information has been saved successfully!');
     }
-
-    $scope.addUser = function() {
-      $scope.inserted = {
-        id: $scope.users.length+1,
-        name: '',
-        status: null,
-        group: null
-      };
-      $scope.users.push($scope.inserted);
-    };
-
     editableOptions.theme = 'bs3';
     editableThemes['bs3'].submitTpl = '<button type="submit" class="btn btn-primary btn-with-icon"><i class="ion-checkmark-round"></i></button>';
     editableThemes['bs3'].cancelTpl = '<button type="button" ng-click="$form.$cancel()" class="btn btn-default btn-with-icon"><i class="ion-close-round"></i></button>';

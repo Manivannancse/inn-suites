@@ -1,0 +1,63 @@
+<div ba-panel ba-panel-title="Add Roles" ba-panel-class="with-scroll">
+  <div>
+    <section class="cd-container cssanimations" ng-controller="rolesCtrl">
+      <div class="add-row-editable-table text-left">
+        <button class="btn btn-primary " ng-click="addUser()">Add Role</button>
+      </div>
+      <table class="table table-bordered table-hover table-condensed">
+        <tr>
+          <td>Role ID</td>
+          <td>Role Type</td>
+          <td>Role Description</td>
+          <td>Read Permission</td>
+          <td>Write Permission</td>
+          <td>Delete Permission</td>
+          <td>Role created by</td>
+          <td>Actions</td>
+        </tr>
+        <tr ng-repeat="user in users" class="editable-row">
+          <td>
+            {{$index+1}}
+          </td>
+          <td>
+            <span>
+              {{ showStatus(user) || 'empty' }}
+            </span>
+          </td>
+          <td>
+            <span>
+              {{ user.name || 'empty' }}
+            </span>
+          </td>
+          <td>
+            <span>
+              {{ user.canRead || 'empty' }}
+            </span>
+          </td>
+          <td>
+            <span>
+              {{ user.canWrite || 'empty' }}
+            </span>
+          </td>
+          <td>
+            <span>
+              {{ user.canDelete || 'empty' }}
+            </span>
+          </td>
+          <td>
+            <span>
+              {{ user.name || 'empty' }}
+            </span>
+          </td>
+          <td>
+            <div class="buttons">
+              <button class="btn btn-primary editable-table-button btn-xs" ng-click="addUser(user)">Edit</button>
+              <button class="btn btn-danger editable-table-button btn-xs" ng-click="removeUser($index)">Delete</button>
+            </div>
+          </td>
+        </tr>
+      </table>
+
+    </section>
+  </div>
+</div>

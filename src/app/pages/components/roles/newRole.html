@@ -1,0 +1,52 @@
+<div class="modal-content">
+  <div class="modal-header">
+    <button type="button" class="close" ng-click="$dismiss()" aria-label="Close">
+      <em class="ion-ios-close-empty sn-link-close"></em>
+    </button>
+    <h4 class="modal-title" id="myModalLabel">New Role</h4>
+  </div>
+  <div class="modal-body">
+    <div class="row">
+      <form>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="input01">Role Type</label>
+            <select class="form-control" ng-model="user.status">
+              <option ng-repeat="sel in statuses" ng-value="{{sel.value}}">{{sel.text}}</option>
+            </select>
+            <!-- <input type="text" class="form-control" ng-value="showStatus(user)" id="input01" placeholder="Role Type"> -->
+          </div>
+          <div class="form-group">
+            <label for="input01">Role Description</label>
+            <input type="text" ng-model="user.name" class="form-control" id="input01" placeholder="Role Description">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <br/>
+          <div class="col-md-12 checkbox">
+            <label class="checkbox-inline custom-checkbox nowrap">
+              <input type="checkbox" ng-modal="user.canRead" ng-checked="user.canRead" id="inlineCheckbox01" value="option1">
+              <span>Read Permission</span>
+            </label>
+          </div>
+          <div class="col-md-12 checkbox">
+            <label class="checkbox-inline custom-checkbox nowrap">
+              <input type="checkbox" ng-modal="user.canWrite" ng-checked="user.canWrite" id="inlineCheckbox01" value="option1">
+              <span>Write Permission</span>
+            </label>
+          </div>
+          <div class="col-md-12 checkbox">
+            <label class="checkbox-inline custom-checkbox nowrap">
+              <input type="checkbox" ng-modal="user.canDelete" ng-checked="user.canDelete" id="inlineCheckbox01" value="option1">
+              <span>Delete Permission</span>
+            </label>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-primary" ng-click="$dismiss();hideModal();">Save</button>
+    <button type="button" class="btn btn-danger" ng-click="$dismiss();hideModal()">cancel</button>
+  </div>
+</div>

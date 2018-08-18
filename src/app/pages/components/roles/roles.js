@@ -5,16 +5,16 @@
 (function () {
   'use strict';
 
-  angular.module('InnSuites.pages.components.timeline', [])
+  angular.module('InnSuites.pages.components.roles', [])
     .config(routeConfig);
 
   /** @ngInject */
   function routeConfig($stateProvider) {
     $stateProvider
-      .state('components.timeline', {
-        url: '/timeline',
-        templateUrl: 'app/pages/components/timeline/timeline.html',
-          title: 'Timeline',
+      .state('components.roles', {
+        url: '/roles',
+        templateUrl: 'app/pages/components/roles/roles.html',
+          title: 'Roles',
           sidebarMeta: {
             icon: 'ion-ios-pulse',
             order: 100,

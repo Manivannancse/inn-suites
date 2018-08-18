@@ -5,7 +5,7 @@
 (function () {
   'use strict';
 
-  angular.module('BlurAdmin.pages.ui.alerts', [])
+  angular.module('InnSuites.pages.ui.alerts', [])
       .config(routeConfig);
 
   /** @ngInject */

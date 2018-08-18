@@ -5,7 +5,7 @@
 (function () {
   'use strict';
 
-  angular.module('BlurAdmin.pages.charts.amCharts', [])
+  angular.module('InnSuites.pages.charts.amCharts', [])
       .config(routeConfig).config(amChartConfig);
 
   /** @ngInject */

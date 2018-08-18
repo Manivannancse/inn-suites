@@ -5,17 +5,17 @@
 (function () {
   'use strict';
 
-  angular.module('BlurAdmin.pages', [
+  angular.module('InnSuites.pages', [
     'ui.router',
 
-    'BlurAdmin.pages.dashboard',
-    // 'BlurAdmin.pages.ui',
-    'BlurAdmin.pages.components',
-    // 'BlurAdmin.pages.form',
-    // 'BlurAdmin.pages.tables',
-    // 'BlurAdmin.pages.charts',
-    // 'BlurAdmin.pages.maps',
-    // 'BlurAdmin.pages.profile',
+    'InnSuites.pages.dashboard',
+    // 'InnSuites.pages.ui',
+    'InnSuites.pages.components',
+    // 'InnSuites.pages.form',
+    // 'InnSuites.pages.tables',
+    // 'InnSuites.pages.charts',
+    // 'InnSuites.pages.maps',
+    // 'InnSuites.pages.profile',
   ])
       .config(routeConfig);
 

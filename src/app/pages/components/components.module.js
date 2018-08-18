@@ -5,10 +5,10 @@
 (function () {
   'use strict';
 
-  angular.module('BlurAdmin.pages.components', [
-    // 'BlurAdmin.pages.components.mail',
-    'BlurAdmin.pages.components.admin',
-    'BlurAdmin.pages.components.siteAdmin',
+  angular.module('InnSuites.pages.components', [
+    'InnSuites.pages.components.admin',
+    'InnSuites.pages.components.siteAdmin',
+    'InnSuites.pages.components.roles',
   ])
       .config(routeConfig);
 
@@ -16,7 +16,7 @@
   function routeConfig($stateProvider) {
     $stateProvider
         .state('components', {
-          url: '/components',
+          url: '/users',
           template : '<ui-view  autoscroll="true" autoscroll-body-top></ui-view>',
           abstract: true,
           title: 'Users',

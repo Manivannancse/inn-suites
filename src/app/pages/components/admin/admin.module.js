@@ -5,7 +5,7 @@
 (function () {
   'use strict';
 
-  angular.module('BlurAdmin.pages.components.admin', [])
+  angular.module('InnSuites.pages.components.admin', [])
     .config(routeConfig);
 
   /** @ngInject */
